@@ -1,0 +1,71 @@
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: pink;
+    justify-content: center;
+    align-items: center;
+}
+
+header{
+    display: flex;
+    width: 375px;
+    height: 80px;
+    align-items: center;
+    position: initial;
+}
+
+.cabecalho{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 0 22px;
+}
+
+.logo{
+    height: 100%;
+    width: 42,19px;
+}
+
+.container{
+    font-family: 'Roboto', sans-serif;
+    background-color: #E5E5E5;
+    height: 667px;
+    width: 375px;
+}
+
+footer{
+    display: flex;
+    height: 80px;
+    width: 375px;
+    background-color: #ffffff;
+    align-items: center;
+    position: initial;
+
+}
+
+.icone-people{
+    width: 42.19px;
+    height: 30.94px;
+    color: #000000;
+}
+
+.imagem-logo{
+    height: 53px;
+    width: 75px;
+}
+
+/* input{
+    border: none;
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+} */
+
+.texto{
+    font-style: italic;
+    padding-left: 17px;
+    color: #000000;
+}
