@@ -31,7 +31,6 @@ function loadMessage(initiate) {
         axios.get("https://mock-api.driven.com.br/api/v4/uol/messages")
             .then(
                 response => {
-                    console.log("aqui")
                     showMessages(response.data)
                 }
             )
@@ -48,10 +47,14 @@ function showMessages(messages) {
             return (`<div class="msg message"><span>${obj.time}</span> <strong>${obj.from}</strong> para <strong>${obj.to}</strong>: ${obj.text}
             </div>`)
         } else if (obj.type === "private_message") {
-            return (`<div class="msg direct"><span>${obj.time}</span> <strong>${obj.from}</strong> reservadamente para <strong>${obj.to}</strong>: ${obj.text}</div>`)
+            if (obj.to === nickname) {
+                return (`<div class="msg direct"><span>${obj.time}</span> <strong>${obj.from}</strong> reservadamente para <strong>${obj.to}</strong>: ${obj.text}</div>`)
+            }
         }
-    });
+    }).join('');
 
+    let elementoQueQueroQueApareca = container.querySelector('msg:last-child');
+    elementoQueQueroQueApareca.scrollIntoView();
 }
 
 function sendMsg() {
@@ -64,9 +67,6 @@ function sendMsg() {
     }
     axios.post("https://mock-api.driven.com.br/api/v4/uol/messages", payload)
         .then(
-            (r) => console.log(r.data)
-        )
-    // TODO: fazer limpar a barra de escrever e aplicar o scroll
-}
-
-
+            document.querySelector(".text-area").value = ''
+        );
+};
