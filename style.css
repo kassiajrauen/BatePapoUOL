@@ -1,17 +1,21 @@
 body{
-    display: flex;
+    display: block;
     flex-direction: column;
     background-color: pink;
-    justify-content: center;
-    align-items: center;
+    height: 667px;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 header{
     display: flex;
-    width: 375px;
+    width: 100%;
+    max-width: 375px;
     height: 80px;
     align-items: center;
     position: initial;
+    margin: 0 auto;
 }
 
 .cabecalho{
@@ -24,48 +28,86 @@ header{
     padding: 0 22px;
 }
 
-.logo{
-    height: 100%;
-    width: 42,19px;
-}
-
 .container{
+    display: flex;
+    flex-direction: column;
     font-family: 'Roboto', sans-serif;
     background-color: #E5E5E5;
-    height: 667px;
+    height: 507px;
+    width: 100%;
+    max-width: 375px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    font-size:14px;
+    gap: 4px;
+}
+
+/*TODO: arrumar alinhamento das mensagens */
+.msg{
+    align-items: center;
+    height: 40px;
     width: 375px;
+    padding: 0 8px;
+    box-sizing: border-box;
+
+}
+
+.msg span{
+    color: gray;
+}
+
+.status{
+    background-color: #DCDCDC;
+}
+
+.message{
+    background-color: #ffffff;
+}
+
+.direct{
+    background-color: #FFDEDE;
+}
+.icon-people{
+    height: 38px;
+    width: 48px;
+}
+
+.imagem-logo{
+    height: 100%;
+    max-height: 53px;
+    width: 100%;
+    max-width: 75px;
 }
 
 footer{
     display: flex;
     height: 80px;
-    width: 375px;
+    width: 100%;
+    max-width: 375px;
     background-color: #ffffff;
     align-items: center;
     position: initial;
+    margin: 0 auto;
+    justify-content: space-between;
+    box-sizing: border-box;
 
+    padding: 0 17px;
+    
 }
 
-.icone-people{
-    width: 42.19px;
-    height: 30.94px;
-    color: #000000;
-}
-
-.imagem-logo{
-    height: 53px;
-    width: 75px;
-}
-
-/* input{
-    border: none;
-    display: flex;
-    flex-wrap: wrap;
-    width: 300px;
-} */
-
-.texto{
+.text-area{
     font-style: italic;
-    padding-left: 17px;
     color: #000000;
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+}
+
+.icon-send{
+    height: 26px;
+    width: 26px;
+}
+
+.send-button{
+    all:unset;
 }

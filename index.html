@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,19 +13,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <header>
         <div class="cabecalho">
             <img class="imagem-logo" src="assets/logo.jpg" alt="logo">
-            <ion-icon class="icone-people" name="people-outline"></ion-icon>
+            <img class="icon-people" src="assets/people-sharp.svg" alt="icon people">
         </div>
     </header>
     <div class="container">
 
     </div>
     <footer>
-        <div class="texto">Escreva aqui...</div>
+        <textarea name="text" class="text-area" wrap="soft" rows="2" cols="40" placeholder="Escreva aqui..."></textarea>
+        <button class="send-button" onclick="sendMsg()">
+            <img class="icon-send" src="assets/paper-plane-outline.svg" alt="icon send">
+        </button>
     </footer>
-    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
