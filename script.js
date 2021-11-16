@@ -1,27 +1,12 @@
-let messages = []
-
 const nickname = prompt("Digite seu nickname: ")
 const promise = axios.post("https://mock-api.driven.com.br/api/v4/uol/participants", { name: nickname })
-    .then(
-        (response) => response.status_code
-    )
+    .then()
     .catch(
         () => {
             alert('Esse nome já existe, tente outro :)');
             document.location.reload(true);
         }
     );
-
-// TODO: VERIFICAR A NECESSIDADE DESSA FUNÇÃO
-if (promise === 200) {
-    const payload = {
-        from: nickname,
-        to: "Todos",
-        text: "entrou na sala...",
-        type: "status"
-    }
-    axios.post("https://mock-api.driven.com.br/api/v4/uol/messages", payload)
-}
 
 promiseStatus(true);
 
@@ -46,15 +31,15 @@ function loadMessage(initiate) {
         axios.get("https://mock-api.driven.com.br/api/v4/uol/messages")
             .then(
                 response => {
-                    messages = [...messages, ...response.data]
-                    showMessages()
+                    console.log("aqui")
+                    showMessages(response.data)
                 }
             )
     };
     setTimeout(loadMessage, 3000)
 };
 
-function showMessages() {
+function showMessages(messages) {
     let container = document.querySelector(".container")
     container.innerHTML = messages.map((obj) => {
         if (obj.type === "status") {
@@ -81,7 +66,7 @@ function sendMsg() {
         .then(
             (r) => console.log(r.data)
         )
-    // TODO: fazer limpar a barra de escrever
+    // TODO: fazer limpar a barra de escrever e aplicar o scroll
 }
 
 
